@@ -1,7 +1,7 @@
-from typing import List, Dict, Any, Set, Optional, Union, Tuple
-import random
 import sys
 import math
+import random
+from typing import List, Dict, Any, Set, Optional, Union, Tuple
 from supportingDS import TSPInstance, TSPSolver
 
 ## TODO: It is possible that distance is float -- we need to check this
@@ -317,3 +317,14 @@ class ParticleSwarm(TSPSolver):
 		distance += self.TSPInstance.distance(currentCity, startCity)
 		return distance
 
+
+def main() -> None:
+	distanceMatrix = [] ## NOTE: This will need to be loaded in from a file (or defined here)
+	numberOfCities = len(distanceMatrix)
+
+	## NOTE: You can add another potiional argument "hyperparameters" to tune the hyperparmaeters
+	PS = ParticleSwarm()
+	PS.run(distanceMatrix, numberOfCities, timer=59.0)
+
+if __name__ == "__main__":
+	main()

@@ -1,8 +1,8 @@
-import random
 import time
+import random
 import threading
 from typing import List, Set, Tuple, Any
-from functools import partial
+
 ## TODO: It is possible that distance is float -- we need to check this
 distanceType = int 
 cityType = int

@@ -3,7 +3,7 @@ import math
 import random
 from typing import List, Dict, Set, Tuple, Optional, Any
 
-from AlgBbasic import ParticleSwarm
+from ParticleSwarm import ParticleSwarm
 
 ## TODO: It is possible that distance is float -- we need to check this
 distanceType = int 
@@ -134,3 +134,17 @@ class GeneticParticleSwarm(ParticleSwarm):
 
 	def _selectRandomCity(self):
 		return random.randint(0, self.TSPInstance.numberOfCities-1)
+
+
+def main() -> None:
+	distanceMatrix = [] ## NOTE: This will need to be loaded in from a file (or defined here)
+	numberOfCities = len(distanceMatrix)
+
+	## NOTE: You can add another potiional argument "hyperparameters" to tune the hyperparmaeters
+	GPS = GeneticParticleSwarm()
+	GPS.run(distanceMatrix, numberOfCities, timer=59.0)
+
+
+if __name__ == "__main__":
+	main()
+  

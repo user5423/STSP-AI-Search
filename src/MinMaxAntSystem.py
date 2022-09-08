@@ -4,7 +4,7 @@ import sys
 import collections
 from typing import Any, Dict, List, Set, Tuple
 
-from AlgAbasic import AntSystem
+from AntSystem import AntSystem
 from supportingDS import TSPInstance
 
 distanceType = int 
@@ -187,8 +187,16 @@ class MaxMinAntSystem(AntSystem):
 
 
 
+def main() -> None:
+	distanceMatrix = [] ## NOTE: This will need to be loaded in from a file (or defined here)
+	numberOfCities = len(distanceMatrix)
 
+	## NOTE: You can add another potiional argument "hyperparameters" to tune the hyperparamaeters
+	MMAS = MaxMinAntSystem()
+	MMAS.run(distanceMatrix, numberOfCities, timer=59.0)
 
+if __name__ == "__main__":
+	main()
 
 
 	

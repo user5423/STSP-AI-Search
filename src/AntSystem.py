@@ -325,8 +325,12 @@ class AntSystem(TSPSolver):
 
 
 def main() -> None:
+	distanceMatrix = [] ## NOTE: This will need to be loaded in from a file (or defined here)
+	numberOfCities = len(distanceMatrix)
+
+	## NOTE: You can add another potiional argument "hyperparameters" to tune the hyperparmaeters
 	AS = AntSystem()
-	AS.run(timer=59.0)
+	AS.run(distanceMatrix, numberOfCities, timer=59.0)
 
 
 if __name__ == "__main__":
